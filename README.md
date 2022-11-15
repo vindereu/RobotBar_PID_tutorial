@@ -6,7 +6,7 @@
 # Install by ROS method
 ```
 cd workspace/PID_ws/src
-git clone
+git clone https://github.com/vindereu/RobotBar_PID_tutorial.git
 cd ..
 catkin_make
 source ~/.bashrc
