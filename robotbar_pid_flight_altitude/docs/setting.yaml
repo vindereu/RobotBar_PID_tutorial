@@ -1,0 +1,30 @@
+controller_data:
+  height:
+    control:
+      range:
+      - 0
+      - 100
+      resolution: 0.01
+      unit: percentage
+    pid_gains:
+    - 0
+    - 0
+    - 0.0
+    target:
+      default: 0
+      range:
+      - 0
+      - 1.3
+      resolution: 0.01
+      unit: m
+      value: 0
+    tolerance: 0.0
+model:
+  name: robotbar_pid_flight_altitude
+  description: "\u98DB\u884C\u5B9A\u9AD8"
+  snapshot: "docs/model_snapshot.png"
+  spawn: "model_spawn.launch"
+program:
+  topic: ik
+  node: data_transport
+  file: model.py

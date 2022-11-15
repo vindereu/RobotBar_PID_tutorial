@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="ball">
+    <link
+    name="ball_link">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.024429" />
+      <inertia
+        ixx="3.166E-06"
+        ixy="1.0125E-22"
+        ixz="5.7175E-22"
+        iyy="3.166E-06"
+        iyz="2.3823E-22"
+        izz="3.166E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/ball_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/ball_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="ball_link">
+      <material>Gazebo/Orange</material>
+      <maxContacts>1</maxContacts>
+  </gazebo>
+</robot>

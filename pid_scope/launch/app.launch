@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+    <node name="pid_scope" pkg="pid_scope" type="tk_window.py" required="true" />
+</launch>

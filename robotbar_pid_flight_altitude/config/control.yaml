@@ -1,0 +1,20 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+target_controller:
+  type: position_controllers/JointPositionController
+  joint: target_joint
+
+board_controller:
+  type: effort_controllers/JointEffortController
+  joint: board_joint
+
+motor_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: motor_joint
+
+gazebo_ros_control/pid_gains:
+  target_joint: {p: 100, i: 0, d: 0}
+  board_joint: {p: 1, i: 0, d: 0}
+  motor_joint: {p: 1, i: 0.001, d: 0}

@@ -1,0 +1,10 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+shaft_controller:
+  type: position_controllers/JointPositionController
+  joint: shaft_joint
+
+gazebo_ros_control/pid_gains:
+  shaft_joint: {p: 4, i: 0.1, d: 0.3}

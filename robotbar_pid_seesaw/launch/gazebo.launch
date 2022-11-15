@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <include file="$(find robotbar_pid_seesaw)/launch/model_spawn.launch" />  
+</launch>

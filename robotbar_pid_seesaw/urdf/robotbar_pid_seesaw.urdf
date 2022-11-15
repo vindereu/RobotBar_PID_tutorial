@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robotbar_pid_seesaw">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 -0.00119663735740164 0.056620016976484"
+        rpy="0 0 0" />
+      <mass
+        value="0.412716261519565" />
+      <inertia
+        ixx="0.00143274196942032"
+        ixy="-1.89946122644641E-19"
+        ixz="1.6371961431362E-19"
+        iyy="0.000952518880691993"
+        iyz="2.61576448481676E-05"
+        izz="0.000869229678339635" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="motor_link">
+    <inertial>
+      <origin
+        xyz="-2.5098E-09 -0.00012384 -0.039504"
+        rpy="0 0 0" />
+      <mass
+        value="0.027206" />
+      <inertia
+        ixx="2.6333E-06"
+        ixy="4.0291E-17"
+        ixz="8.3716E-23"
+        iyy="2.6262E-06"
+        iyz="1.3123E-10"
+        izz="2.0792E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/motor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/motor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.038 0.13"
+      rpy="-1.5708 0.047619 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shaft_link">
+    <inertial>
+      <origin
+        xyz="0 5.5511E-17 0.0038903"
+        rpy="0 0 0" />
+      <mass
+        value="0.0040097" />
+      <inertia
+        ixx="2.3867E-07"
+        ixy="2.2026E-23"
+        ixz="6.7792E-22"
+        iyy="2.4333E-07"
+        iyz="-8.1714E-22"
+        izz="1.1307E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/shaft_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/shaft_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 -0.047619" />
+    <parent
+      link="motor_link" />
+    <child
+      link="shaft_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.4"
+      upper="0.4"
+      effort="1000"
+      velocity="2" />
+  </joint>
+  <link
+    name="seesaw_Link">
+    <inertial>
+      <origin
+        xyz="0.0007554 -6.1786E-06 -0.015285"
+        rpy="0 0 0" />
+      <mass
+        value="0.29887" />
+      <inertia
+        ixx="0.00011457"
+        ixy="-1.3949E-09"
+        ixz="-3.3491E-06"
+        iyy="0.0056424"
+        iyz="3.285E-08"
+        izz="0.0057088" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/seesaw_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/seesaw_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="seesaw_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.038"
+      rpy="1.5708 0 0" />
+    <parent
+      link="shaft_link" />
+    <child
+      link="seesaw_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="sensor_link">
+    <inertial>
+      <origin
+        xyz="7.3733E-05 -0.00024445 0.0008474"
+        rpy="0 1.5708 0" />
+      <mass
+        value="0.00034278" />
+      <inertia
+        ixx="2.8213E-09"
+        ixy="2.4144E-12"
+        ixz="3.4557E-11"
+        iyy="1.0327E-08"
+        iyz="3.6792E-11"
+        izz="1.2859E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/sensor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5708 0" />
+      <geometry>
+        <mesh
+          filename="package://robotbar_pid_seesaw/meshes/sensor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sensor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.22364 0 -0.00045"
+      rpy="1.5708 0 0" /> <!--1.5708 0 1.5708-->
+    <parent
+      link="seesaw_Link" />
+    <child
+      link="sensor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  <gazebo reference="sensor_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="motor_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" />
+  </gazebo>
+  
+  <!-- Distance sensor -->
+  <gazebo reference="sensor_link">
+    <sensor name="vl53l1xSensor" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1</samples>
+            <resolusion>1</resolusion>
+            <min_angle>-0</min_angle>
+            <max_angle>0</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.008</min>
+          <max>4</max>
+          <resolusion>0.001</resolusion>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.001</stddev>
+        </noise>
+      </ray>
+      <plugin name="vl53l1x_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/vl53l1x_sensor/distance</topicName>
+        <frameName>vl53l1x_sensor</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <transmission name="shaft_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="shaft_motor" />
+    <joint name="shaft_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  
+</robot>
